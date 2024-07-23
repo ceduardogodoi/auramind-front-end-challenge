@@ -1,19 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ChatRepositoryImpl } from "@/repositories/ChatRepositoryImpl";
-import type { Chat } from "@/models/Chat";
+import type { Chat, ChatPayload } from "@/models/Chat";
 
 export function useChatRepository() {
   const [chats, setChats] = useState<Chat[]>([]);
 
+  const chatRepository = useMemo(() => {
+    return ChatRepositoryImpl.getInstance();
+  }, []);
+
   useEffect(() => {
-    const chatRepository = ChatRepositoryImpl.getInstance();
     const storageChats = chatRepository.findAll();
     setChats(storageChats);
-  }, []);
+  }, [chatRepository]);
+
+  function save(payload: ChatPayload) {
+    const newChat = chatRepository.save(payload);
+    setChats((chats) => [...chats, newChat]);
+  }
 
   return {
     chats,
+    save,
   };
 }
