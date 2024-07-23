@@ -3,7 +3,7 @@
 import type { PropsWithChildren } from "react";
 import { Button } from "@/components/atoms/Button";
 
-export function HeaderRoot({ children }: PropsWithChildren) {
+export function Header({ children }: PropsWithChildren) {
   return (
     <header>
       <div>

@@ -1,15 +1,18 @@
-import { HeaderRoot } from "@/components/molecules/Header/HeaderRoot";
+import { Header } from "@/components/molecules/Header";
 import { HeaderModelSelect } from "@/components/atoms/HeaderModelSelect";
+import { Chat } from "@/components/organisms/Chat";
 
 export default function HomePage() {
   return (
     <>
-      <HeaderRoot>
+      <Header>
         <HeaderModelSelect />
-      </HeaderRoot>
+      </Header>
 
       <main>
         <h1>Home page</h1>
+
+        <Chat />
       </main>
     </>
   );

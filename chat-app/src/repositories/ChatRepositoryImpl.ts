@@ -12,6 +12,23 @@ enum Storage {
 }
 
 export class ChatRepositoryImpl implements ChatRepository {
+  private static instance: ChatRepositoryImpl;
+
+  private constructor() {
+    if (ChatRepositoryImpl.instance) {
+      throw new Error("Singleton ChatRepositoryImpl cannot be re-instantiated.");
+    }
+  }
+
+  public static getInstance(): Readonly<ChatRepositoryImpl> {
+    if (ChatRepositoryImpl.instance == null) {
+      ChatRepositoryImpl.instance = new ChatRepositoryImpl();
+      Object.freeze(ChatRepositoryImpl.instance);
+    }
+
+    return ChatRepositoryImpl.instance;
+  }
+
   public save(chat: ChatPayload): Chat {
     const payload = chatPayloadSchema.parse(chat);
     const newChat: Chat = {
