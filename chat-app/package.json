@@ -14,9 +14,11 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "framer-motion": "^11.3.8",
+    "nanoid": "^5.0.7",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
