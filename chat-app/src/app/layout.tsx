@@ -16,9 +16,11 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
     <html className={fonts.inter.variable}>
       <body>
         <Providers>
-          <Navbar />
+          <div className="root">
+            <Navbar />
 
-          {children}
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

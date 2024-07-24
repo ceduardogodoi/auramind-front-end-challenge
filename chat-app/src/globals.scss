@@ -6,10 +6,15 @@
   --webkit-font-smoothing: antialiased;
 }
 
-body {
+html {
+  height: 100vh !important;
+}
+
+.root {
   display: grid;
   grid-template-columns: 20% auto;
   grid-template-areas:
     "nav header"
     "nav content";
+  min-height: 100vh !important;
 }

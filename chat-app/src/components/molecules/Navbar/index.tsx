@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Routes } from "@/routes";
 import { Box } from "@chakra-ui/react";
 import { NavbarLinksList } from "./NavbarLinksList";
-import { ChatHistory } from "../ChatHistory";
+import { NavbarChatsHistory } from "./NavbarChatsHistory";
 
 export function Navbar() {
   return (
@@ -14,12 +14,13 @@ export function Navbar() {
           width={150}
           height={64}
           alt="Logo da Auramind"
+          priority
         />
       </Link>
 
       <NavbarLinksList />
 
-      <ChatHistory />
+      <NavbarChatsHistory />
     </Box>
   );
 }

@@ -7,7 +7,12 @@ export function HeaderModelSelect() {
   const selectId = useId();
 
   return (
-    <Select name="models" id={`models-select${selectId}`}>
+    <Select
+      name="models"
+      id={`models-select${selectId}`}
+      border="unset"
+      maxW="fit-content"
+    >
       <option value="claude">Claude 3.5 Sonnet</option>
     </Select>
   );

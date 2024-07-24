@@ -4,14 +4,12 @@ import {
   Box,
   FormControl,
   Input,
-  ListItem,
-  Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import { ChatItem } from "../atoms/ChatItem";
+import { ChatItem } from "@/components/atoms/ChatItem";
 import { useId } from "react";
 
-export function ChatHistory() {
+export function NavbarChatsHistory() {
   const chatsId = useId();
 
   return (
