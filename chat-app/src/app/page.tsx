@@ -9,7 +9,7 @@ export default function HomePage() {
         <HeaderModelSelect />
       </Header>
 
-      <main>
+      <main className="page-content">
         <h1>Home page</h1>
 
         <Chat />

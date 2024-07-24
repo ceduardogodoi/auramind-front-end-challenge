@@ -3,9 +3,9 @@
 import type { PropsWithChildren } from "react";
 import { Button } from "@/components/atoms/Button";
 
-export function Header({ children }: PropsWithChildren) {
+export function Header({ children }: Readonly<PropsWithChildren>) {
   return (
-    <header>
+    <header className="page-header">
       <div>
         <Button>Menu hamburger</Button>
       </div>

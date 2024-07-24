@@ -2,6 +2,6 @@
 
 import type { PropsWithChildren } from "react"
 
-export function Button({ children }: PropsWithChildren) {
+export function Button({ children }: Readonly<PropsWithChildren>) {
   return <button>{children}</button>
 }
