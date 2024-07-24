@@ -23,7 +23,6 @@ export function ChatItem({ title }: ChatItemProps) {
         size="sm"
         pe="unset"
         ps={2}
-        rounded="unset"
         display="block"
         textAlign="start"
         w="100%"
@@ -38,7 +37,6 @@ export function ChatItem({ title }: ChatItemProps) {
         <IconButton
           bgColor="inherit"
           aria-label="Botão lixeira"
-          rounded="unset"
           size="sm"
           _hover={{
             bgColor: "inherit",
