@@ -1,7 +1,9 @@
+import { Box, Heading } from "@chakra-ui/react";
+
 export default function MrDocPage() {
   return (
-    <main>
-      <h1>Mr Doc</h1>
-    </main>
+    <Box as="main">
+      <Heading as="h1">Mr Doc</Heading>
+    </Box>
   );
 }

@@ -1,16 +1,20 @@
-"use client"
+"use client";
 
 import type { PropsWithChildren } from "react";
-import { Button } from "@/components/atoms/Button";
+import { Box, IconButton, Text } from "@chakra-ui/react";
+
+import MenuIcon from "@/assets/icons/menu.svg";
 
 export function Header({ children }: Readonly<PropsWithChildren>) {
   return (
-    <header className="page-header">
-      <div>
-        <Button>Menu hamburger</Button>
-      </div>
+    <Box as="header" gridArea="header">
+      <Box display="flex">
+        <IconButton aria-label="Menu" icon={<MenuIcon />} bgColor="gray.800" />
+
+        <Text as="p">Seu assistente corporativo, multimodelo e seguro</Text>
+      </Box>
 
       {children}
-    </header>
+    </Box>
   );
 }

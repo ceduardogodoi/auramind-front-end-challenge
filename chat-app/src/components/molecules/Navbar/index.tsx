@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Input } from "@chakra-ui/react";
 import { Routes } from "@/routes";
+import { Box } from "@chakra-ui/react";
 import { NavbarLinksList } from "./NavbarLinksList";
+import { ChatHistory } from "../ChatHistory";
 
 export function Navbar() {
   return (
-    <nav className="page-navbar">
+    <Box as="nav" bgColor="gray.900" gridArea="nav" px={6} py={2}>
       <Link href={Routes.HOME}>
         <Image
           src="https://auramind.ai/logo.png"
@@ -18,17 +19,7 @@ export function Navbar() {
 
       <NavbarLinksList />
 
-      <div>
-        <span>Conversas</span>
-
-        <Input placeholder="Buscar..." />
-      </div>
-
-      <ul>
-        {["JSON Array of Pets"].map((chat, index) => (
-          <li key={index}>{chat}</li>
-        ))}
-      </ul>
-    </nav>
+      <ChatHistory />
+    </Box>
   );
 }

@@ -1,18 +1,30 @@
 import type { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
+import { Link as ChakraLink } from "@chakra-ui/next-js";
 
-type NavLinkProps = ComponentPropsWithoutRef<typeof Link> & {
+type NavLinkProps = ComponentPropsWithoutRef<typeof ChakraLink> & {
   isActive?: boolean;
 };
 
 export function NavLink({ children, isActive = false, ...rest }: NavLinkProps) {
   return (
-    <Link
+    <ChakraLink
       {...rest}
-      data-active={isActive}
-      className="flex gap-2 items-center px-4 py-2 rounded data-[active=true]:bg-[var(--chakra-colors-gray-800)] hover:bg-[var(--chakra-colors-gray-800)]"
+      data-active={isActive || undefined}
+      display="flex"
+      gap={2}
+      alignItems="center"
+      px={4}
+      py={2}
+      rounded={4}
+      _hover={{
+        bgColor: "gray.800",
+      }}
+      _active={{
+        bgColor: "gray.800",
+      }}
     >
       {children}
-    </Link>
+    </ChakraLink>
   );
 }

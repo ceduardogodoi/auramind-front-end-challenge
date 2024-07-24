@@ -1,9 +1,10 @@
 "use client";
 
+import { FormEvent } from "react";
+import { Box, Button, Text } from "@chakra-ui/react";
 import { Textarea } from "@/components/atoms/Textarea";
 import { useChatRepository } from "@/hooks/useChatRepository";
 import { chatPayloadSchema } from "@/models/Chat";
-import { FormEvent } from "react";
 
 export function Chat() {
   const { chats, save } = useChatRepository();
@@ -18,18 +19,16 @@ export function Chat() {
   }
 
   return (
-    <div>
-      <div>
-        <output>
-          {JSON.stringify(chats, null, 2)}
-        </output>
-      </div>
+    <Box>
+      <Box>
+        <Text as="output">{JSON.stringify(chats, null, 2)}</Text>
+      </Box>
 
       <form onSubmit={handleSubmit}>
         <Textarea name="text" />
 
-        <button type="submit">Send</button>
+        <Button type="submit">Send</Button>
       </form>
-    </div>
+    </Box>
   );
 }

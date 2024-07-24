@@ -5,6 +5,7 @@ import { Providers } from "@/providers";
 import { Navbar } from "@/components/molecules/Navbar";
 
 import "@/globals.scss";
+import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Auramind AI (Beta) - IA Generativa para Negócios",

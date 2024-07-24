@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import { NavLink } from "@/components/atoms/NavLink";
 import { Routes } from "@/routes";
 
@@ -12,28 +13,34 @@ export function NavbarLinksList() {
   const pathname = usePathname();
 
   return (
-    <ul className="flex flex-col gap-1">
-    <li>
-      <NavLink isActive={pathname === Routes.HOME} href={Routes.HOME}>
-        <ChatIcon />
+    <UnorderedList
+      styleType="none"
+      ms="unset"
+      display="flex"
+      flexDir="column"
+      gap={1}
+    >
+      <ListItem>
+        <NavLink isActive={pathname === Routes.HOME} href={Routes.HOME}>
+          <ChatIcon />
 
-        <span>Mr. Ai</span>
-      </NavLink>
-    </li>
-    <li>
-      <NavLink isActive={pathname === Routes.MR_DOC} href={Routes.MR_DOC}>
-        <DocIcon />
+          <Text as="span">Mr. Ai</Text>
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        <NavLink isActive={pathname === Routes.MR_DOC} href={Routes.MR_DOC}>
+          <DocIcon />
 
-        <span>Mr. Doc</span>
-      </NavLink>
-    </li>
-    <li>
-      <NavLink isActive={pathname === Routes.EXPLORE} href={Routes.EXPLORE}>
-        <ExploreIcon />
+          <Text as="span">Mr. Doc</Text>
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        <NavLink isActive={pathname === Routes.EXPLORE} href={Routes.EXPLORE}>
+          <ExploreIcon />
 
-        <span>Explorar</span>
-      </NavLink>
-    </li>
-  </ul>
+          <Text as="span">Explorar</Text>
+        </NavLink>
+      </ListItem>
+    </UnorderedList>
   );
 }

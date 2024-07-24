@@ -2,24 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --webkit-font-smoothing: antialiased;
+}
+
 body {
   display: grid;
   grid-template-columns: 20% auto;
   grid-template-areas:
     "nav header"
     "nav content";
-}
-
-.page-navbar {
-  background-color: var(--chakra-colors-gray-900);
-  grid-area: nav;
-  padding: 0.5rem 1.5rem;
-}
-
-.page-header {
-  grid-area: header;
-}
-
-.page-content {
-  grid-area: content;
 }
