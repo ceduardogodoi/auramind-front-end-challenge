@@ -8,7 +8,7 @@ import NewChatIcon from "@/assets/icons/new-chat.svg";
 
 export function Header() {
   return (
-    <Box as="header" gridArea="header" p={4}>
+    <Box as="header" gridArea="header" p={4} height="fit-content">
       <HStack gap={4}>
         <IconButton aria-label="Menu" icon={<MenuIcon />} bgColor="gray.800" />
 

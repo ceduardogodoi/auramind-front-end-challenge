@@ -1,12 +1,12 @@
 "use client";
 
 import { FormEvent } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
-import { Textarea } from "@/components/atoms/Textarea";
+import { Box, Text, VStack } from "@chakra-ui/react";
+import { Prompt } from "@/components/atoms/Prompt";
 import { useChatRepository } from "@/hooks/useChatRepository";
 import { chatPayloadSchema } from "@/models/Chat";
 
-export function Chat() {
+export function ChatContent() {
   const { chats, save } = useChatRepository();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -19,16 +19,16 @@ export function Chat() {
   }
 
   return (
-    <Box>
-      <Box>
-        <Text as="output">{JSON.stringify(chats, null, 2)}</Text>
+    <VStack w="100%" mt="auto">
+      <Box as="form" onSubmit={handleSubmit} w="100%">
+        <Prompt name="text" placeholder="Escreva sua mensagem aqui..." />
       </Box>
 
-      <form onSubmit={handleSubmit}>
-        <Textarea name="text" />
-
-        <Button type="submit">Send</Button>
-      </form>
-    </Box>
+      <Box as="footer">
+        <Text as="p" fontSize={10} color="gray.200">
+          Mr.AI pode cometer erros. Considere verificar informações importantes.
+        </Text>
+      </Box>
+    </VStack>
   );
 }
